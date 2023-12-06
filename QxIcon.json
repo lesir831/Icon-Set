@@ -3,11 +3,15 @@
   "icons": [
     {
       "name": "OpenAi.png",
-      "url": "https://raw.githubusercontent.com/lesir831/Qure/master/IconSet/lesir/OpenAi.png"
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/OpenAi.png"
     },
     {
       "name": "Bing.png",
-      "url": "https://raw.githubusercontent.com/lesir831/Qure/master/IconSet/lesir/Bing.png"
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/Bing.png"
+    },
+    {
+      "name": "1Password.png",
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/1Password.png"
     }
   ],
   "name": "Qx Icon By lesir"
