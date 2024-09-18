@@ -8,9 +8,19 @@ on:
 jobs:
   generate-json:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 授予写权限
+
     steps:
       - name: 检出仓库代码
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # 禁用默认凭据
+
+      - name: 配置 Git 用户
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: 生成 QxIcon.json 文件
         run: |
@@ -21,7 +31,7 @@ jobs:
           png_files=()
           while IFS= read -r -d '' file; do
             png_files+=("$file")
-          done < <(find . -maxdepth 1 -type f -name '*.png' -print0)
+          done < <(find . -maxdepth 1 -type f -name '*.png' -print0 | sort -z)
 
           for ((i=0; i<${#png_files[@]}; i++)); do
             file="${png_files[$i]#./}"
@@ -44,3 +54,4 @@ jobs:
         with:
           commit_message: 'Update QxIcon.json'
           file_pattern: QxIcon.json
+          token: ${{ secrets.GITHUB_TOKEN }}  # 使用具有写权限的令牌
