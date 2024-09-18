@@ -1,0 +1,46 @@
+name: Generate QxIcon.json
+
+on:
+  push:
+    branches:
+      - main  # 根据需要修改分支名称
+
+jobs:
+  generate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v3
+
+      - name: 生成 QxIcon.json 文件
+        run: |
+          echo '{' > QxIcon.json
+          echo '  "description": "lesir Qx Icon",' >> QxIcon.json
+          echo '  "icons": [' >> QxIcon.json
+
+          png_files=()
+          while IFS= read -r -d '' file; do
+            png_files+=("$file")
+          done < <(find . -maxdepth 1 -type f -name '*.png' -print0)
+
+          for ((i=0; i<${#png_files[@]}; i++)); do
+            file="${png_files[$i]#./}"
+            echo '    {' >> QxIcon.json
+            echo '      "name": "'"$file"'",' >> QxIcon.json
+            echo '      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/'"$file"'"' >> QxIcon.json
+            if [ $i -lt $((${#png_files[@]}-1)) ]; then
+              echo '    },' >> QxIcon.json
+            else
+              echo '    }' >> QxIcon.json
+            fi
+          done
+
+          echo '  ],' >> QxIcon.json
+          echo '  "name": "Qx Icon By lesir"' >> QxIcon.json
+          echo '}' >> QxIcon.json
+
+      - name: 提交并推送更改
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Update QxIcon.json'
+          file_pattern: QxIcon.json
