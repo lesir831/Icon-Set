@@ -14,8 +14,7 @@ jobs:
     steps:
       - name: 检出仓库代码
         uses: actions/checkout@v3
-        with:
-          persist-credentials: false  # 禁用默认凭据
+        # 保留默认凭据，不设置 persist-credentials
 
       - name: 配置 Git 用户
         run: |
@@ -54,4 +53,3 @@ jobs:
         with:
           commit_message: 'Update QxIcon.json'
           file_pattern: QxIcon.json
-          token: ${{ secrets.GITHUB_TOKEN }}  # 使用具有写权限的令牌
