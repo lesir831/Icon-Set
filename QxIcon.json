@@ -2,20 +2,40 @@
   "description": "lesir Qx Icon",
   "icons": [
     {
-      "name": "OpenAi.png",
-      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/OpenAi.png"
+      "name": "1Password.png",
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/1Password.png"
     },
     {
       "name": "Bing.png",
       "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/Bing.png"
     },
     {
-      "name": "1Password.png",
-      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/1Password.png"
+      "name": "OpenAi.png",
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/OpenAi.png"
     },
     {
       "name": "WeType.png",
       "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/WeType.png"
+    },
+    {
+      "name": "company.png",
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/company.png"
+    },
+    {
+      "name": "perplexity.png",
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/perplexity.png"
+    },
+    {
+      "name": "perplexityAi.png",
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/perplexityAi.png"
+    },
+    {
+      "name": "raspi.png",
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/raspi.png"
+    },
+    {
+      "name": "wireguard.png",
+      "url": "https://raw.githubusercontent.com/lesir831/Icon-Set/main/wireguard.png"
     }
   ],
   "name": "Qx Icon By lesir"
