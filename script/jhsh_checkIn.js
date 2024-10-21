@@ -72,7 +72,7 @@ script-providers:
 
 const $ = new Env('建行生活');
 const notify = $.isNode() ? require('./sendNotify') : '';
-let AppId = '1472477795', giftMap = { "1": "饿了么", "2": "数字", "3": "美团" }, message = '';
+let AppId = '1472477795', giftMap = { "1": "饿了么", "2": "商超", "3": "神券" }, message = '';
 let giftType = getEnv('JHSH_GIFT') || '1';  // 奖励类型，默认领取'外卖'券
 let bodyStr = getEnv('JHSH_BODY') || '';  // 签到所需的 body
 let autoLoginInfo = getEnv('JHSH_LOGIN_INFO') || '';  // 刷新 session 所需的数据
